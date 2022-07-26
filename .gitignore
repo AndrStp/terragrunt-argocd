@@ -21,3 +21,7 @@
 build/
 */build/
 out/
+
+# Personal
+temp.md 
+temp_env_vars.sh

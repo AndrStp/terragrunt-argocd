@@ -11,7 +11,9 @@ locals {
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
 terraform {
-  source = "git::git@github.com:dubass83/learn-terraform-provision-aks-cluster.git//argo-cd-config?ref=v0.0.21"
+  
+  # need to investigate further...
+  source = "git::https://github.com/AndrStp/learn-terraform-provision-aks-cluster.git//argo-cd-config"
 }
 
 # Include all settings from the root terragrunt.hcl file

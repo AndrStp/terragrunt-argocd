@@ -10,11 +10,13 @@ locals {
 
 # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
 # working directory, into a temporary folder, and execute your Terraform commands in that folder.
+
 terraform {
-  source = "git::git@github.com:dubass83/learn-terraform-provision-aks-cluster.git//argo-cd?ref=v0.0.11"
+  source = "git::https://github.com/AndrStp/learn-terraform-provision-aks-cluster.git//argo-cd"
 }
 
 # Include all settings from the root terragrunt.hcl file
+
 include {
   path = find_in_parent_folders()
 }
@@ -43,6 +45,7 @@ dependency "aks-login"{
 }
 
 # These are the variables we have to pass in to use the module specified in the terragrunt configuration above
+
 inputs = {
   azurerm_resource_group      = dependency.aks.outputs.resource_group_name
   azurerm_kubernetes_cluster  = dependency.aks.outputs.kubernetes_cluster_name
